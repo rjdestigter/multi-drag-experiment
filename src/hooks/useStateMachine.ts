@@ -21,20 +21,6 @@ export function useStateMachine() {
 
   // Dispatch an event to the state machine
   const send: Send = (event) => {
-    if ("x" in event && "y" in event) {
-      const { x, y, ...rest } = event;
-      console.log(
-        "x",
-        data.dragPosition,
-        x,
-        Math.abs(data.dragPosition.x - x),
-        "y",
-        data.dragPosition.y,
-        y,
-        Math.abs(data.dragPosition.y - y)
-      );
-    }
-
     // Event configuration for the current state
     const on = statechart.states[ref.current.value].on?.[event.type];
     const config: Exclude<On, string> =

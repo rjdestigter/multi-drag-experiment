@@ -56,12 +56,6 @@ function preventTextSelection() {
 }
 
 const eventIsNotSelected = (context: StateData, { event }: StateEvent) => {
-  console.log("eventIsNotSelected", context, event);
-  console.log(
-    `[${context.selected.join(", ")}].includes(${
-      (event as unknown as Appointment).id
-    })`
-  );
   return !context.selected.includes((event as unknown as Appointment).id);
 };
 
